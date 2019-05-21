@@ -32,6 +32,7 @@ mysqli_close($conn);
         <h3><?php echo $post['title']; ?> </h3>
         <small>Creared on <?php echo $post['created_at']; ?> by <?php echo $post['writer']; ?></small>
         <p><?php echo $post['body']; ?></p>
+        <a class="btn btn-default" href="post.php?id="<?php echo $post['id']; ?>>Read More</a>
       </div>
 
     <?php endforeach; ?>
