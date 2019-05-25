@@ -17,27 +17,17 @@ mysqli_free_result($result);
 mysqli_close($conn);
 
 ?>
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-  <meta charset="utf-8">
-  <title>my Blog</title>
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-</head>
-<body>
-  <div class="container">
-    <h1>Posts</h1>
-    <?php foreach ($posts as $post) : ?>
-      <div class="well">
-        <h3><?php echo $post['title']; ?> </h3>
-        <small>Creared on <?php echo $post['created_at']; ?> by <?php echo $post['writer']; ?></small>
-        <p><?php echo $post['body']; ?></p>
-        <a class="btn btn-default" href="post.php?id="<?php echo $post['id']; ?>>Read More</a>
-      </div>
+<?php include('inc/header.php'); ?>
+<div class="container">
+  <h1>Posts</h1>
+  <?php foreach ($posts as $post) : ?>
+    <div class="well">
+      <h3><?php echo $post['title']; ?> </h3>
+      <small>Creared on <?php echo $post['created_at']; ?> by <?php echo $post['writer']; ?></small>
+      <p><?php echo $post['body']; ?></p>
+      <a class="btn btn-default" href="post.php?id=<?php echo $post['id']; ?>">Read More</a>
+    </div>
 
-    <?php endforeach; ?>
-  </div>
-
-
-</body>
-</html>
+  <?php endforeach; ?>
+</div>
+<?php include('inc/footer.php'); ?>

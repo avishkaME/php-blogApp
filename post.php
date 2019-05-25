@@ -21,22 +21,14 @@ mysqli_free_result($result);
 mysqli_close($conn);
 
 ?>
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-  <meta charset="utf-8">
-  <title>my Blog</title>
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-</head>
-<body>
-  <div class="container">
-    <a href="<?php echo ROOT_URL; ?>" class="btn btn-default">Back</a>
-    <h1><?php echo $post['title']; ?> </h1>
-    <small>Created on <?php echo $post['created_at']; ?> by <?php echo $post['writer']; ?></small>
-    <p><?php echo $post['body']; ?></p>
+<?php include('inc/header.php'); ?>
+<div class="container">
+  <a href="<?php echo ROOT_URL; ?>" class="btn btn-default">Back</a>
+  <h1><?php echo $post['title']; ?> </h1>
+  <small>Created on <?php echo $post['created_at']; ?> by <?php echo $post['writer']; ?></small>
+  <p><?php echo $post['body']; ?></p>
 
-  </div>
+</div>
 
 
-</body>
-</html>
+<?php include('inc/footer.php'); ?>
