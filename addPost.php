@@ -5,9 +5,17 @@ require('config/db.php');
 //check for Submit
 if (isset($_POST['submit'])) {
   //get form data
-  $title = mysqli_real_escape_string($_POST['title']);
-  $body = mysqli_real_escape_string($_POST['body']);
-  $writer = mysqli_real_escape_string($_POST['writer']);
+  $title = mysqli_real_escape_string($conn, $_POST['title']);
+  $body = mysqli_real_escape_string($conn, $_POST['body']);
+  $writer = mysqli_real_escape_string($conn, $_POST['writer']);
+
+  $query = "INSERT INTO posts(title, body, writer) VALUES ('$title', '$body', '$writer')";
+
+  if (mysqli_query($conn, $query)) {
+    header('Location: '.ROOT_URL.'');
+  }else {
+    echo 'error:'.mysqli_error($conn);
+  }
 }
 
 ?>
