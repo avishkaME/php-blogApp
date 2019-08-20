@@ -1,6 +1,7 @@
 <?php
 require('config/config.php');
 require('config/db.php');
+//require('login.php');
 
 //check for Submit
 if (isset($_POST['submit'])) {
@@ -19,8 +20,42 @@ if (isset($_POST['submit'])) {
 }
 
 ?>
+
+<?php
+//form validation//
+
+  //Message vars
+  $msg = '';
+  $msgClass =  '';
+
+  //check for submit
+  if (filter_has_var(INPUT_POST, 'submit')) {
+    // get form data
+    $title1 = $_POST['title'];
+    $writer1 = $_POST['writer'];
+    $text = $_POST['body'];
+
+    if (!empty($title1) && !empty($writer1) && !empty($text)) {
+      // passed
+      echo "passed";
+    } else {
+      // failed
+      $msg = 'please fill all fields';
+      $msgClass = 'alert-danger';
+    }
+  }
+
+ ?>
+
 <?php include('inc/header.php'); ?>
 <div class="container">
+
+  <?php if($msg != ''): ?>
+      <div class="alert <?php echo $msgClass; ?>">
+        <?php echo $msg; ?>
+      </div>
+  <?php endif; ?>
+
   <h1>Add Post</h1>
   <form class="" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
     <div class="form-group">
