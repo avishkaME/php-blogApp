@@ -19,14 +19,19 @@ mysqli_close($conn);
 
 ?>
 <?php include('inc/header.php'); ?>
-<div class="container">
-  <h1>Posts</h1>
+<div class="container" >
+  <h1 style="text-align:center;">Posts</h1>
   <?php foreach ($posts as $post) : ?>
-    <div class="well">
-      <h3><?php echo $post['title']; ?> </h3>
-      <small>Creared on <?php echo $post['created_at']; ?> by <?php echo $post['writer']; ?></small>
-      <p><?php echo $post['body']; ?></p>
-      <a class="btn btn-default" href="post.php?id=<?php echo $post['id']; ?>">Read More</a>
+    <div class="card" style="width:95%; margin:10px 0; background-color:rgb(240, 240, 240);">
+     <div class="card-body">
+      <h3 class="card-title" style="text-transform: capitalize;"><b><?php echo $post['title']; ?></b> </h3>
+
+      <br/>
+      <p class="card-text"><?php echo $post['body']; ?></p>
+      <small style="color:gray; ">Creared on <?php echo $post['created_at']; ?> by <?php echo $post['writer']; ?></small>
+       <br/>
+      <a class="btn btn-danger" style="float:right;" href="post.php?id=<?php echo $post['id']; ?>">Read More</a>
+      </div>
     </div>
 
   <?php endforeach; ?>

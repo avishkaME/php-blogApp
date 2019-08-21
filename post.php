@@ -37,17 +37,22 @@ mysqli_close($conn);
 ?>
 <?php include('inc/header.php'); ?>
 <div class="container">
-  <a href="<?php echo ROOT_URL; ?>" class="btn btn-default">Back</a>
-  <h1><?php echo $post['title']; ?> </h1>
-  <small>Created on <?php echo $post['created_at']; ?> by <?php echo $post['writer']; ?></small>
+
+  <a href="<?php echo 'index.php'; ?>" class="btn btn-dark">Back</a>
+  <div class="card" style="width:95%; margin:10px 0; background-color:rgb(240, 240, 240);">
+  <div class="card-body">
+  <h1 style="text-transform: capitalize;"><b><?php echo $post['title']; ?></b> </h1>
+  <small style="color:gray; float:right;">Created on <?php echo $post['created_at']; ?> by <?php echo $post['writer']; ?></small>
+  <br/>
   <p><?php echo $post['body']; ?></p>
-  <hr>
+  </div>
   <form class="pull-right" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
     <input type="hidden" name="delete_id" value="<?php echo $post['id']; ?>">
+    <a href="editPost.php?id=<?php echo $post['id']; ?>" class="btn btn-dark" >Edit</a>
     <input type="submit" name="delete" value="Delete" class="btn btn-danger">
   </form>
-  <a href="<?php echo ROOT_URL; ?>editPost.php?id=<?php echo $post['id']; ?>" class="btn btn-default">Edit</a>
-
+  </div>
+  
 </div>
 
 

@@ -27,6 +27,8 @@ require('config/db.php');
           // }
         ?>
    <form action="inc/signup.inc.php" method="POST">
+   <div class="card" style="width:95%; margin:10px 0; background-color:rgb(240, 240, 240);">
+   <h3 class="card-title" style="text-transform: capitalize; text-align:center;"><b>Signup</b></h3>
      <div class="form-group">
        <label>Username</label>
        <input type="text" class="form-control" placeholder="Enter username" name="uid">
@@ -44,9 +46,10 @@ require('config/db.php');
       <label>Confirm Password</label>
       <input type="password" class="form-control"  placeholder="Retype Password" name="pwd-repeat">
     </div>
-    <button class="btn btn-primary" type="submit" name="signup-submit">Signup</button>
+    <button class="btn btn-danger " style=" width:100px; " type="submit" name="signup-submit">Signup</button>
     <!-- <a href="addPost.php" class="btn btn-primary" name="signup-submit">Signup</a> -->
   </form>
+  </div>
  </div>
 
 

@@ -7,13 +7,13 @@
   <div class="collapse navbar-collapse" id="navbarsExample02">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="<?php echo ROOT_URL; ?>">Home </a>
+        <a class="nav-link" href="index.php">Home </a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="<?php echo ROOT_URL; ?>login.php">Add post </a>
+        <a class="nav-link" href="login.php">Add post </a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="<?php echo ROOT_URL; ?>login.php">Log in</a>
+        <a class="nav-link" href="login.php">Log in</a>
       </li>
     </ul>
   </div>

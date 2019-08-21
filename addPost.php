@@ -48,6 +48,7 @@ if (isset($_POST['submit'])) {
  ?>
 
 <?php include('inc/header.php'); ?>
+<div class="card mx-auto" style="width:95%; margin:10px 0; background-color:rgb(240, 240, 240);">
 <div class="container">
 
   <?php if($msg != ''): ?>
@@ -56,7 +57,7 @@ if (isset($_POST['submit'])) {
       </div>
   <?php endif; ?>
 
-  <h1>Add Post</h1>
+  <h1 style="text-align:center;">Add Post</h1>
   <form class="" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
     <div class="form-group">
       <label>Title</label>
@@ -70,8 +71,9 @@ if (isset($_POST['submit'])) {
       <label>Body</label>
       <textarea name="body" class="form-control"></textarea>
     </div>
-    <input type="submit" name="submit" value="Submit" class="btn btn-primary">
+    <input type="submit" name="submit" value="Submit" class="btn btn-danger">
 
   </form>
+</div>
 </div>
 <?php include('inc/footer.php'); ?>
