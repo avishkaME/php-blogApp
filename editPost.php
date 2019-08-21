@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
               WHERE id = {$update_id}";
 
   if (mysqli_query($conn, $query)) {
-    header('Location: '.ROOT_URL.'');
+    header('Location: index.php');
   }else {
     echo 'error:'.mysqli_error($conn);
   }
@@ -41,8 +41,9 @@ mysqli_close($conn);
 
 ?>
 <?php include('inc/header.php'); ?>
+<div class="card mx-auto" style="width:95%; margin:10px 0; background-color:rgb(240, 240, 240);">
 <div class="container">
-  <h1>Add Post</h1>
+  <h1 style="text-align:center;">Add Post</h1>
   <form class="" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
     <div class="form-group">
       <label>Title</label>
@@ -57,8 +58,9 @@ mysqli_close($conn);
       <textarea name="body" class="form-control"><?php echo $post['body']; ?></textarea>
     </div>
     <input type="hidden" name="update_id" value="<?php echo $post['id']; ?>">
-    <input type="submit" name="submit" value="Submit" class="btn btn-primary">
+    <input type="submit" name="submit" value="Submit" class="btn btn-danger">
 
   </form>
+</div>
 </div>
 <?php include('inc/footer.php'); ?>
